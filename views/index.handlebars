@@ -1,0 +1,23 @@
+<h1 class='text-center'>{{title}}</h1>
+<h4>Members:</h4>
+<ul class="list-group">
+	{{#each members}}
+	<li class="list-group-item">{{this.name}}: {{this.status}}</li>
+	{{/each}}
+</ul>
+<br>
+<h4>Add member:</h4>
+<form class="mb-4" action='/api/members' method='POST'>
+	<div class="form-group">
+		<label for='name'>Name</label>
+		<input type='text' class="form-control" name='name'></label>
+	</div>
+	<div class="form-group">
+		<label for='name'>Status</label>
+		<input type='text' class="form-control" name='status'></label>
+	</div>
+	<input type="submit" value="Add Member" class='btn btn-primary btn-block'>
+</form>
+<br>
+<h4>API</h4>
+<a href="/api/members" class="btn btn-light mt-4">View API</a>
